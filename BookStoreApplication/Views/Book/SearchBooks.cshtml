@@ -1,0 +1,138 @@
+﻿@using BookStoreApplication.Models;
+@model ProductViewModel
+
+@{
+    ViewData["Title"] = "SearchBooks";
+    var productList = (List<ProductViewModel>)ViewData["products"];
+}
+
+<h2>SearchBooks</h2>
+
+<div class="container order">
+    <div class="row">
+        <div class="col-md-2 order-div ">
+            BookId
+
+        </div>
+        <div class="col-md-2 order-div ">
+            Book Title
+
+        </div>
+        <div class="col-md-2 order-div ">
+            Book price
+
+        </div>
+        <div class="col-md-2 order-div ">
+            Image
+
+        </div>
+        <div class="col-md-2 order-div ">
+
+        </div>
+        <div class="col-md-2 order-div ">
+
+        </div>
+    </div>
+</div>
+@foreach (var item in productList)
+{
+
+    <form asp-action="AddToCart" asp-controller="Order" method="post">
+        <div class="container">
+            <div class="row table-striped">
+                <div class="col-md-2 order-div ">
+
+                    @item.BookId
+
+                </div>
+                <div class="col-md-2 order-div ">
+                    @item.Title
+
+                </div>
+                <div class="col-md-2 order-div ">
+                    @item.Price
+
+                </div>
+                <div class="col-md-2 order-div ">
+                    <img src="@item.Image" style="width:50px;height:65px" />
+
+                </div>
+
+                <div class="col-md-2 order-div ">
+                    <input type="submit" value="VIEW DETAILS" class="btn btn-secondary" /><br>
+                    
+                </div>
+                <div class="col-md-2 order-div ">
+                    <input type="submit" value="ADD TO CART" class="btn btn-secondary" />
+
+                </div>
+                <input type="hidden" asp-for="BookId" value="@item.BookId" />
+                <input type="hidden" asp-for="Title" value="@item.Title" />
+                <input type="hidden" asp-for="SubCategoryId" value="@item.SubCategoryId" />
+                <input type="hidden" asp-for="CategoryId" value="@item.CategoryId" />
+                <input type="hidden" asp-for="Price" value="@item.Price" />
+
+            </div>
+        </div>
+    </form>
+
+}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <input type="submit" value="VIEW CART"  class="btn-dark" onclick="@("window.location.href='" + @Url.Action("ViewCart", "Order") + "'")" />
+
+        </div>
+    </div>
+</div>
+
+@*<table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookQuantity)
+                </th>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookQuantity)
+                </td>
+                <td>
+                    <button class="btn btn-info" type="button" id="addressSearch">
+                        Add To Cart
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-info" type="button" id="addressSearch">
+                        Buy
+                    </button>
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+*@
+

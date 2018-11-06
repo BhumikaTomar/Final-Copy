@@ -1,0 +1,64 @@
+﻿@using BookStoreWebService.Models.BookDB
+@model Book
+@{
+    ViewData["Title"] = "AddBook";
+}
+
+<h2>AddBook</h2>
+
+<div class="container">
+    <div class="inner-container">
+        <form asp-controller="Admin" asp-action="AddBook" method="post" enctype="multipart/form-data">
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="BookTitle">Book Title:</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="BookTitle" class="form-control" id="BookTitle" placeholder="Enter book title">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="Price">Price:</label>
+                <div class="col-sm-10">
+                    <input type="number" asp-for="Price" class="form-control" id="price" placeholder="Enter price">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="BookQuantity">Book Quantity:</label>
+                <div class="col-sm-10">
+                    <input type="number" asp-for="BookQuantity" class="form-control" id="bookquantity" placeholder="Enter quantity">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="CategoryId">CategoryId:</label>
+                <div class="col-sm-10">
+                    <input type="number" asp-for="CategoryId" class="form-control" id="categoryid" placeholder="Enter CategoryId">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="SubCategoryId">SubCategoryId:</label>
+                <div class="col-sm-10">
+                    <input type="number" asp-for="SubCategoryId" class="form-control" id="subcategoryid" placeholder="Enter SubCategoryId">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="SupplierId">SupplierId:</label>
+                <div class="col-sm-10">
+                    <input type="number" asp-for="SupplierId" class="form-control" id="supplierid" placeholder="Enter SupplierId">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="SupplierId">Choose Image</label>
+                <div class="col-sm-10">
+                    @*<input type="file" asp-for="Image" class="form-control" id="image">*@
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">AddBook</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

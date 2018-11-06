@@ -1,0 +1,83 @@
+﻿@using BookStoreWebService.Models.BookDB
+@model IList<BookStoreWebService.Models.BookDB.Book>
+
+
+@{
+    ViewData["Title"] = "GetBooks";
+    var book = ViewBag.AllBooks;
+}
+@*<table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+
+            @foreach
+    (var obj in
+    Model)
+            {
+             <tr>   <td>@obj.BookTitle</td></tr>
+              <tr><td>@obj.BookQuantity</td></tr>
+              <tr><td>@obj.Category</td></tr>
+            }
+
+
+
+    </table>*@
+
+<div class="container">
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>BookId</th>
+                <th>BookTitle</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach
+(var obj in
+Model)
+            {
+                <tr>
+                    <td><input type="text" name="BookTitle" value=@obj.BookTitle /></td>
+                    <td><input type="text" name="BookPrice" value=@obj.Price /></td>
+                    <td><input type="text" name="BookQuantity" value=@obj.BookQuantity /></td>
+                    <td> <button type="submit" id="save" class="btn btn-primary">SaveChanges</button></td>
+                </tr>
+
+            }
+    </table>>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+
+
+    $(document).ready(function () {
+        $('input').attr("disabled", "disabled");
+
+        $('#edit-btn').click(function (e) {
+
+            $('input').removeAttr("disabled");
+
+        });
+        $('#save').click(function (e) {
+
+            //$.ajax function is used to make ajax requests to the home controller and its actions
+            $.ajax({
+                crossDomain: true,
+                url: 'http://localhost:64966/AdminService/EditNewBook' //Home controller and GetSubCategories action
+                type: 'GET',
+                // we want to make a HTTPGET request
+                success: function (data) {
+                    alert(data)
+                }
+            });
+
+
+        });
+    });
+</script>
+

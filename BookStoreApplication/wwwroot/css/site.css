@@ -1,0 +1,87 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+/*padding-top: 50px*/
+    padding-bottom: 20px;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+.container{
+   
+  
+}
+.heading {
+    color: #0c5e87;
+    height:40px;
+  vertical-align:middle;
+}
+footer {
+    /* display: block; */
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    /* display: none; */
+    width: 100%;
+}
+
+.inner-container {
+   /* text-align: center;*/
+    max-width: 1024px;
+    padding: 97px;
+    margin: auto;
+    border: 1px solid;
+    box-shadow: 5px 5px 5px 0 #888888;
+    background-color: aliceblue;
+    margin-top: 40px;
+}
+.form-control{
+    max-width:300px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+/****LAYOUT******/
+.button {
+    width: 100%;
+    max-width: 210px;
+    height: 34px;
+    border-radius: 25px;
+    background-color: #b5d676;
+    border: 1px solid #587f54;
+    color: #325c46;
+    outline: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
+.order-div{
+    padding:20px;
+
+}
+.container.order {
+    background-color: #545b62;
+    color: white;
+    font-size: 20px;
+}

@@ -1,0 +1,9 @@
+﻿.radio label {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.paymentBg {
+    background-image: url('../images/download (1).jpg');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+}
